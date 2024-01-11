@@ -1,0 +1,31 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  color: #999990;
+}
+body {
+  background-color: #fefdf5;
+  padding: 10px 30px ;
+}
+
+.nav_main {
+  display: flex;
+  flex-direction: column;
+}
+.nav_top {
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.nav_right {
+  display: flex;
+
+  column-gap: 50px;
+}
+.nav_icon {
+  display: flex;
+  column-gap: 5px;
+}
+.search_cont {
+  display: flex;
+  column-gap: 5px;
+}
