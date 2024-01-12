@@ -3,13 +3,13 @@ import BagImg from "../assets/shopping_bag.png";
 import StarImg from "../assets/star.png";
 
 
-export function ProductCard(){
+export function ProductCard(props){
     return <div className="product_card">
-        <img src="" alt="" />
+        <img src={props.objectData.image} className="product_image" alt="" />
         <div className="product_top">
             <div className="card_info">
-                <h2>price</h2>
-                <p>name</p>
+                <h2>{props.objectData.price}</h2>
+                <p>{props.objectData.title}</p>
             </div>
             <div className="card_btn">
                 <img src={BagImg} alt="bag" />

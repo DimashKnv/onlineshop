@@ -1,24 +1,40 @@
+import { useSelector } from "react-redux";
 import { ProductCard } from "./ProductCard";
+import { useGetProductsQuery } from "../store/api";
 
-export function Main(){
-    return <div className="main_cont">
-        <h1>Popular</h1>
-        <div className="sort_top">
-            <h2>Сортировать по:</h2>
-            <h2>Популярности</h2>
-            <h2>Рейтингу</h2>
-            <h2>Цене</h2>
-            <h2>Скидке</h2>
-            <h2>Обновлению</h2>
-        </div>
+export function Main() {
+  const { data, isLoading, error } = useGetProductsQuery(); //[{}*25]
+  console.log(data);
+  return (
+    <div className="main_cont">
+      <h1>Popular</h1>
+      <div className="sort_top">
+        <p>Сортировать по: </p>
+        <h4>Популярности</h4>
+        <h4>Рейтингу</h4>
+        <h4>Цене</h4>
+        <h4>Скидке</h4>
+        <h4>Обновлению</h4>
+      </div>
+      <div className="main_cont_bot">
         <div className="sort_left">
-            <h2>Цена</h2>
-            <input type="range" />
-            <h2>Размер</h2>
-            <h2>Цвет</h2>
+          <h3>Цена</h3>
+          <input type="range" />
+          <h3>Размер</h3>
+          <h3>Цвет</h3>
         </div>
-        <div className="product_list">
-            <ProductCard></ProductCard>
-        </div>
+        {isLoading ? (
+          <h1>Loading...</h1>
+        ) : error ? (
+          <h1>Error</h1>
+        ) : (
+          <div className="product_list">
+            {data.map((product_card) => {
+              return <ProductCard objectData={product_card} />;
+            })}
+          </div>
+        )}
+      </div>
     </div>
+  );
 }
