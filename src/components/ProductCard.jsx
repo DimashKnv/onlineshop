@@ -1,9 +1,12 @@
+import { useDispatch } from "react-redux";
 import LikeImg from "../assets/favorite_border.png";
 import BagImg from "../assets/shopping_bag.png";
 import StarImg from "../assets/star.png";
+import { addFav } from "../store/reducers";
 
 
 export function ProductCard(props){
+    const dispatch=useDispatch()
     return <div className="product_card">
         <img src={props.objectData.image} className="product_image" alt="" />
         <div className="product_top">
@@ -13,7 +16,7 @@ export function ProductCard(props){
             </div>
             <div className="card_btn">
                 <img src={BagImg} alt="bag" />
-                <img src={LikeImg} alt="like" />
+                <img src={LikeImg} alt="like" onClick={()=>{dispatch(addFav(props.objectData))}}/>
             </div>
             
         </div>

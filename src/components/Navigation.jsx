@@ -3,6 +3,7 @@ import SearchImg from "../assets/search.png";
 import LikeImg from "../assets/favorite_border.png";
 import PersonImg from "../assets/person_outline.png";
 import BagImg from "../assets/shopping_bag.png";
+import { Link } from "react-router-dom";
 
 export function Navigation() {
   return (
@@ -15,7 +16,10 @@ export function Navigation() {
             <input type="text" placeholder="Поиск" />
           </div>
           <div className="nav_icon">
-          <img src={LikeImg} alt="Like" />
+            <Link to="/Favorite">
+            <img src={LikeImg} alt="Like" />
+            </Link>
+          
           <img src={PersonImg} alt="Person" />
           <img src={BagImg} alt="Bag" />
           </div>
@@ -23,7 +27,10 @@ export function Navigation() {
         </div>
       </div>
       <div className="nav_bot">
-        <p>Main page/Mens wear</p>
+        <Link to="/">
+        <p>Main page</p>
+        </Link>
+        
       </div>
     </div>
   );
