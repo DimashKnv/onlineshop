@@ -4,7 +4,6 @@ import { useGetProductsQuery } from "../store/api";
 
 export function Main() {
   const { data, isLoading, error } = useGetProductsQuery(); //[{}*25]
-  console.log(data);
   return (
     <div className="main_cont">
       <h1>Popular</h1>

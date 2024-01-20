@@ -6,6 +6,7 @@ import { Main } from "./components/Main";
 import { Route, Routes } from "react-router-dom";
 import { FavoriteCard } from "./components/FavoriteCard";
 import { FavoriteComponent } from "./components/FavoriteComponent";
+import { Cart } from "./components/Cart";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main></Main>}></Route>
         <Route path="/Favorite" element={<FavoriteComponent></FavoriteComponent>}></Route>
+        <Route path="/Cart" element={<Cart></Cart>}></Route>
       </Routes>
     </>
   );

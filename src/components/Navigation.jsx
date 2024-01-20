@@ -17,20 +17,20 @@ export function Navigation() {
           </div>
           <div className="nav_icon">
             <Link to="/Favorite">
-            <img src={LikeImg} alt="Like" />
+              <img src={LikeImg} alt="Like" />
             </Link>
-          
-          <img src={PersonImg} alt="Person" />
-          <img src={BagImg} alt="Bag" />
+
+            <img src={PersonImg} alt="Person" />
+            <Link to="/Cart">
+              <img src={BagImg} alt="Bag" />
+            </Link>
           </div>
-          
         </div>
       </div>
       <div className="nav_bot">
         <Link to="/">
-        <p>Main page</p>
+          <p>Main page</p>
         </Link>
-        
       </div>
     </div>
   );
